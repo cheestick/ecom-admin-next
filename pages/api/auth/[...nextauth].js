@@ -4,7 +4,7 @@ import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 import clientPromise from "@/lib/mongodb";
 
 export const authOptions = {
-  adapter: MongoDBAdapter({ clientPromise }),
+  adapter: MongoDBAdapter(clientPromise, { databaseName: "ecom-admin-next" }),
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
