@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Logout from "./Logout";
 
 const Nav = () => {
   const router = useRouter();
@@ -11,7 +12,7 @@ const Nav = () => {
     pathname.includes(link) ? activeLink : inactiveLink;
 
   return (
-    <aside className="text-white p-4 pr-0 min-w-[20ch]">
+    <aside className="text-white p-4 pr-0 min-w-[max(20ch,15vw)]">
       <Link href="/" className="flex gap-2 my-4 pl-4 ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -109,6 +110,9 @@ const Nav = () => {
           <span>Settings</span>
         </Link>
       </nav>
+      <div className="flex w-full mt-10 pl-4">
+        <Logout />
+      </div>
     </aside>
   );
 };

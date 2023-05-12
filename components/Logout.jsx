@@ -3,7 +3,7 @@ import { signOut } from "next-auth/react";
 const Logout = () => {
   return (
     <button
-      className="border-blue-800 border-2 py-2 px-4 rounded-lg text-blue-800/90 hover:bg-blue-800/90 hover:border-blue-400/50 hover:text-white/90"
+      className="border-blue-100  border-2 py-2 px-8 rounded-lg text-md text-blue-900/90 hover:bg-blue-100/90 hover:border-blue-300/50 hover:text-blue-500/90"
       onClick={signOut}
     >
       Logout
