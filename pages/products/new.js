@@ -32,7 +32,7 @@ const NewProduct = () => {
   return (
     <Layout>
       <main>
-        <form onSubmit={handleSubmit} onReset={handleReset}>
+        <form onSubmit={handleSubmit} onReset={handleReset} autoComplete="off">
           <h1 className="text-2xl text-blue-800">New Product</h1>
           <div className="flex flex-col gap-0">
             <label htmlFor="productname">Product name</label>
