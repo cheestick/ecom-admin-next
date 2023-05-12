@@ -2,11 +2,13 @@ import { useState } from "react";
 import axios from "axios";
 import Layout from "@/components/Layout";
 import { Notify } from "notiflix";
+import { useRouter } from "next/router";
 
 const NewProduct = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,6 +22,7 @@ const NewProduct = () => {
     if (status === 201) {
       Notify.success(`${product.title} was created`);
       handleReset();
+      router.push("/products");
     }
   };
 
