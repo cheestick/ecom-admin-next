@@ -3,10 +3,15 @@ import axios from "axios";
 import { Notify } from "notiflix";
 import { useRouter } from "next/router";
 
-const NewProductForm = () => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
+const ProductForm = ({
+  _id,
+  title: existingTitle = "",
+  description: existingDescription = "",
+  price: existingPrice = "",
+}) => {
+  const [title, setTitle] = useState(existingTitle);
+  const [description, setDescription] = useState(existingDescription);
+  const [price, setPrice] = useState(existingPrice);
   const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -17,9 +22,18 @@ const NewProductForm = () => {
     }
 
     const data = { title, description, price };
-    const { status, data: product } = await axios.post("/api/products", data);
-    if (status === 201) {
-      Notify.success(`${product.title} was created`);
+
+    let response;
+
+    if (_id) {
+      // update
+      response = await axios.put(`/api/products/?id=${_id}`, data);
+    } else {
+      // create
+      response = await axios.post("/api/products", data);
+    }
+    if (response.status === 201 || response.status === 200) {
+      Notify.success(`Product was saved`);
       handleReset();
       router.push("/products");
     }
@@ -33,7 +47,6 @@ const NewProductForm = () => {
 
   return (
     <form onSubmit={handleSubmit} onReset={handleReset} autoComplete="off">
-      <h1 className="text-2xl text-blue-800">New Product</h1>
       <div className="flex flex-col gap-0">
         <label htmlFor="productname">Product name</label>
         <input
@@ -66,4 +79,4 @@ const NewProductForm = () => {
   );
 };
 
-export default NewProductForm;
+export default ProductForm;

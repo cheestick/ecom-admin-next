@@ -26,4 +26,18 @@ export default async function handle(req, res) {
 
     return res.status(201).json(newProduct);
   }
+
+  if (method === "PUT") {
+    const { id } = req.query;
+    const { title, description, price } = req.body;
+    if (id) {
+      return res.json(
+        await Product.updateOne(
+          { _id: id },
+          { title, description, price: Number(price) }
+        )
+      );
+    }
+    return res.status(400).json({ message: "ID not provided" });
+  }
 }

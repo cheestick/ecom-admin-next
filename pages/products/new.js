@@ -1,11 +1,12 @@
 import Layout from "@/components/Layout";
-import NewProductForm from "@/components/NewProductForm";
+import ProductForm from "@/components/ProductForm";
 
 const NewProductPage = () => {
   return (
     <Layout>
       <main>
-        <NewProductForm />
+        <h1 className="text-2xl text-blue-800">New Product</h1>
+        <ProductForm />
       </main>
     </Layout>
   );
