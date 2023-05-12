@@ -5,8 +5,8 @@ const PersonalInfo = () => {
   const { data: session } = useSession();
 
   return (
-    <div className="flex gap-4 justify-end">
-      <h1 className="text-2xl font-semibold">{session.user.name}</h1>
+    <div className="flex gap-4 justify-between items-center">
+      <h1 className="text-lg font-semibold">Hello, {session.user.name}</h1>
       <Logout />
     </div>
   );
