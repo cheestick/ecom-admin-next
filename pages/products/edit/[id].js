@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import axios from "axios";
 
-const EditProduct = () => {
+const EditProductPage = () => {
   const router = useRouter();
   const { id } = router.query;
 
@@ -17,4 +17,4 @@ const EditProduct = () => {
   return <Layout>EditProduct</Layout>;
 };
 
-export default EditProduct;
+export default EditProductPage;

@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import NewProductForm from "@/components/NewProductForm";
 
-const NewProduct = () => {
+const NewProductPage = () => {
   return (
     <Layout>
       <main>
@@ -11,4 +11,4 @@ const NewProduct = () => {
   );
 };
 
-export default NewProduct;
+export default NewProductPage;
