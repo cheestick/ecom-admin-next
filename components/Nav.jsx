@@ -5,14 +5,14 @@ const Nav = () => {
   const router = useRouter();
   const { pathname } = router;
 
-  const inactiveLink = "flex gap-2 pr-6";
-  const activeLink = `${inactiveLink} bg-gray-50 py-2 px-2 text-blue-900/90 rounded-l-lg`;
+  const inactiveLink = "flex gap-2 px-4 py-2";
+  const activeLink = `${inactiveLink} bg-gray-50 text-blue-900/90 rounded-l-lg`;
   const checkActiveLink = (link) =>
     pathname.includes(link) ? activeLink : inactiveLink;
 
   return (
-    <aside className="text-white p-4 pr-0">
-      <Link href="/" className="flex gap-2 mb-6 ">
+    <aside className="text-white p-4 pr-0 min-w-[20ch]">
+      <Link href="/" className="flex gap-2 my-4 pl-4 ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -30,7 +30,7 @@ const Nav = () => {
         <span className="">Ecom Admin</span>
       </Link>
 
-      <nav className="flex flex-col gap-4">
+      <nav className="flex flex-col gap-2">
         <Link
           href={"/"}
           className={pathname === "/" ? activeLink : inactiveLink}
