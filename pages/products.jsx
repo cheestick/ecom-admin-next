@@ -32,7 +32,7 @@ export default function Products() {
               <div>{p.title}</div>
               <div className="flex gap-2 place-content-center">
                 <Link
-                  href={`/products/${p._id}`}
+                  href={`/products/edit/${p._id}`}
                   className="flex gap-2 items-center border-2 px-4 text-center align-middle rounded-lg hover:bg-orange-100"
                 >
                   <svg
