@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:is(input, textarea) {
+  @apply border-2 border-blue-200 rounded-lg px-4 py-2;
+}
+:is(input, textarea):is(:focus, :focus-visible, :focus-within) {
+  @apply border-blue-400 outline-none;
+}
+
+:is(label) {
+  @apply px-4 pt-1 text-blue-400 text-lg mt-2;
+}
+
+.btn__primary {
+  @apply bg-blue-300 text-white px-6 py-2 rounded-full border-transparent border-2 text-lg;
+}
+
+.btn__primary:is(:hover, :focus, :focus-visible, :focus-within) {
+  @apply border-blue-400 outline-none bg-transparent text-blue-400;
+}

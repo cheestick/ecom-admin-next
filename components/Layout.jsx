@@ -19,7 +19,7 @@ export default function Layout({ children }) {
       <Nav />
       <div className="px-8 py-4 m-4 ml-0 rounded-xl flex-grow items-center bg-gray-50">
         <PersonalInfo />
-        <main>{children}</main>
+        <main className="">{children}</main>
       </div>
     </div>
   );
